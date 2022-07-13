@@ -1,0 +1,90 @@
+header{
+    margin-top: 0px;
+}
+
+
+header .nav{
+    min-height: 80px;
+    overflow: hidden;
+    background-color: black;
+}
+
+header .logo h2,
+header .logo span,
+header .logo p{
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+}
+
+header .logo h2{
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+footer .logo h2{
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+
+header .logo .icono {
+    color: #efefef;
+}
+
+
+
+
+header .logo p{
+    color: #777777;
+}
+
+footer .logo p{
+    color: #777777;
+}
+
+header .menu{
+    padding: 0;
+}
+
+header .menu a{
+display: block;
+padding: 0 30px;
+text-decoration: none;
+color: black;
+}
+
+header .menu .c-1{ background-color: red;}
+header .menu .c-2{ background-color: red;}
+header .menu .c-3{ background-color: red;}
+header .menu .c-4{ background-color: red;}
+
+
+header .menu .c-1:hover{ background-color: #04273b;}
+header .menu .c-2:hover{ background-color: #04273b;}
+header .menu .c-3:hover{ background-color: #04273b;}
+header .menu .c-4:hover{ background-color: #04273b;}
+
+
+.redes-sociales{
+    padding:40px0;
+    margin-bottom:40px;
+    margin-top:40px;
+    background-color: #efefef;  
+
+ }                            
+
+ .redes-sociales .icono{
+    width:100px;
+     height:100px;
+    font-size:40px;
+     line-height:100px;
+    color:rgba(255, 255, 255, 0.61);
+     text-align:center;
+    background:#bfbfbf;
+    display:inline-block;
+    margin:0px 20px;
+     text-decoration:none;
+    border-radius:100px;
+    transition:all .3s ease;
+ }

@@ -1,0 +1,66 @@
+header {
+    background-color: aquamarine;
+    color:black;
+    width: auto;
+}
+
+.navct {
+    list-style-type: none;
+    background-color:aquamarine;
+    margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding: 40px;
+    font-size: 25px;
+}
+
+.lista {
+    display: inline;
+    color: black;
+    cursor: pointer;
+    
+}
+
+body {
+    background-color:white;
+    text-align: center;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    
+}
+
+.boton {
+    margin-left: 90px;
+   
+}
+
+.producto {
+     height: 300px;
+     margin-left: 0;
+
+
+    
+}
+
+
+
+
+    .buy-btn {
+        text-decoration:none;
+        font-weight:600;
+        font-size:20px;
+        color:#ffffff;
+        padding-top:20px;
+        padding-bottom:20px;
+        padding-left:40px;
+        padding-right:40px;
+        background-color:#005BBB;
+        }

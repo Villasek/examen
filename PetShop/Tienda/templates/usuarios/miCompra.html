@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Petshop | Detalle de factura {{infoBoleta.idBoleta}} {% endblock %}
+{% block estilos %}
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static '/css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Detalle_factura.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="bod">
+        <div class="container py-4 my-4">
+            <div>
+                <h1 class="dis">Detalle de factura {{infoBoleta.idBoleta}}</h1>
+                {% if infoBoleta.estadoActual == 'Despachado' %}                
+                    <img class="tick " src="{% static '/img/despacho.png' %}">
+                {% elif infoBoleta.estadoActual == 'Entregado' %}
+                    <img class="tick " src="{% static '/img/entregado.png' %}">
+                {% else %}
+                    <img class="tick " src="{% static '/img/caja.png' %}">
+                {% endif %}
+            </div>
+            <div>
+                <h5 class="estado">{{infoBoleta.estadoActual}}</h5>
+            </div>
+        </div>
+        <div class="container py-2 my-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Categoria</th>
+                        <th>Nombre Producto</th>
+                        <th>Precio</th>
+                        <th>% Desc suscriptor</th>
+                        <th>% Desc oferta</th>
+                        <th>Precio final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for b in boleta %}
+                        <tr>
+                            <td>{{b.idproducto.idProducto}}</td>
+                            <td>{{b.idproducto.categoria}}</td>
+                            <td>{{b.idproducto.nombreProducto}}</td>
+                            <td>${{b.subTotal}}</td>
+                            <td>{{b.porcSub}}%</td>
+                            <td>{{b.porcOferta}}%</td>
+                            <td>${{b.total}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr><td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td>Total</td>
+                    <td>${{infoBoleta.monto}}</td>
+                </tr></tfoot>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script  src="{% static '/js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static '/js/popper.min.js' %}"></script>
+    <script src="{% static '/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/scripts.js' %}"></script>
+{% endblock %}

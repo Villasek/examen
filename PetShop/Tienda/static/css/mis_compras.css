@@ -1,0 +1,68 @@
+
+
+.navct {
+    list-style-type: none;
+    background-color:aquamarine;
+    margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding: 40px;
+    font-size: 25px;
+    
+    
+    
+    
+    
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tabla {
+    background-color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+   
+}
+
+table {
+    background-color: bisque;
+    margin: auto;
+    border: 5px black solid;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-collapse: collapse;
+    text-align: center;
+   
+    
+}
+body {
+    background-color:white;
+    text-align: center;
+}
+
+th, td {
+    border: 1px black solid;
+    padding: 5px;
+
+}
+
+tr:hover {
+    background-color:grey;
+}
+
+.lista {
+    display: inline;
+    color: black;
+    cursor: pointer;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+footer {
+    background-color:white;
+    text-align: center;
+}

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Petshop | Mantenedor de productos {% endblock %}
+{% block estilos %}
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static '/css/estilos.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container" >
+        <h1>Mantenedor de productos</h1>
+        <BR>
+        <br>
+        <div style="display: flex; justify-items: center; align-items: center; width: 80%;">
+            <form class="col" method="post" action="">
+                {% csrf_token %}
+                <table>
+                    <thead>
+                    {% for inp in form %}
+                        <tr>
+                            <td><label for="{{inp.name}}">{{inp.label}}</label></td>
+                            <td><input type="{{ inp.field.widget.input_type }}" value="{{ inp.value | default:''}}" name="{{inp.name}}" id="{{inp.name}}" style="margin-left: 200px ;"></td>
+                        </tr>
+                    {% endfor %}
+
+                    <tr>
+                        <td><label for="Categoria">Categoría</label></td>
+                        <td>
+                        <select name="Categoria" id="Categoria" style="margin-left: 200px ;">
+                            {% if producto.categoria == 'Gatos'%}
+                                <option value="Gatos">Gatos</option>
+                                <option value="Perros">Perros</option>   
+                            {% else %}
+                                <option value="Perros">Perros</option>
+                                <option value="Gatos">Gatos</option>   
+                            {% endif %}
+                        </select>
+                        </td>
+                    </tr>
+                    </thead>
+                </table>
+                <button type="submit" class="btn btn-primary" style="margin-right: 20px; margin-bottom: 20px;">Guardar</button> 
+                <button type="reset" class="btn btn-warning" style="margin-right: 20px; margin-bottom: 20px;">Limpiar</button> 
+            </form>
+
+            <div>
+                <img src="{{producto.imagenProducto}}" style="width: 250px; height: 350px;"/>
+            </div>
+        </div>
+    
+        <table class="table table-hover" style="margin-bottom: 200px;">
+            <thead>
+            <tr>
+                <th> </th>
+                <th>ID</th>
+                <th>Categoria</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>%Desc Subscriptor</th>
+                <th>%Desc Oferta</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td></td>
+                    <td>{{producto.idProducto}}</td>
+                    <td>{{producto.categoria}}</td>
+                    <td>{{producto.nombreProducto}}</td>
+                    <td>{{producto.descripcion}}</td>
+                    <td>${{producto.precio}}</td>
+                    <td>{{producto.porcSub}}%</td>
+                    <td>{{producto.porcOferta}}%</td>
+                    <td><a href="{% url 'editar_producto' producto.idProducto%}" class="btn btn-primary" style="text-decoration: none;">Editar<a/></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script  src="{% static '/js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static '/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/Mantenedor_producto_validar.js' %}"></script>
+{% endblock %}

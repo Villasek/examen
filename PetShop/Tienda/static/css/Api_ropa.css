@@ -1,0 +1,12 @@
+.bod{
+    transition:box-shadow 0.3s ease;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding:8px;
+    cursor:pointer;
+}
+div h3{
+    text-align: center;
+    width: 1000px;
+    margin: 0 auto;
+}

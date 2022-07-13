@@ -1,0 +1,24 @@
+
+.bod{
+    background-color: white;
+    margin-left:300px;
+    margin-right:300px;
+}
+.dis{
+    display:inline;
+    padding-left:20px;
+}
+
+.tick {
+    display:inline;
+    float:right;
+    width:80px;
+    margin-right:20px;
+}
+.estado{
+    margin-right:20px;
+    padding-bottom:50px;
+    position:relative;
+    float:right;
+    
+}
